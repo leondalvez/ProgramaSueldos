@@ -3,9 +3,12 @@ Programa para ingresar vendedores y sus stributos con algunas funciones de calcu
  */
 package programasueldos;
 
+import Entidades.Vendedores;
+import Servicio.VendedoresServicio;
+
 /**
  *
- * @author usuario
+ * @author Leonardo ALvez
  */
 public class ProgramaSueldos {
 
@@ -13,7 +16,15 @@ public class ProgramaSueldos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // Instanciamos un objeto del tipo servicio 
+        VendedoresServicio vs = new VendedoresServicio();
+        // Instanciamos un objeto Vendedores para alojar el retorno 
+        // de lo construido en la clase de servicio. El metodo altaVendedores
+        // retorna un objeto que debemos alojar en el siguiente objeto.
+        Vendedores v1 =  vs.altaVendedores();
+        vs.SueldoMensual(v1);
+        vs.vacaciones(v1);
+        
     }
     
 }
